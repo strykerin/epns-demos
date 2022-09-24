@@ -16,13 +16,13 @@ const sendNotification = async () => {
             type: 3, // target
             identityType: 2, // direct payload
             notification: {
-                title: `Notification Title!`,
-                body: `Notification Body!`
+                title: 'Hi',
+                body: 'Hi'
             },
             payload: {
-                title: `Payload Title`,
-                body: `Payload Body`,
-                cta: 'https://docs.epns.io/developers',
+                title: 'Hi',
+                body: 'Hi',
+                cta: 'https://youtube.com',
                 img: ''
             },
             recipients: recipientAddress,
@@ -36,4 +36,14 @@ const sendNotification = async () => {
     }
 }
 
+const getNotifications = async () => {
+    try {
+        const notifications = await EpnsAPI.user.getFeeds({ user: recipientAddress, env: 'staging', limit: 1, page: 1 });
+        console.log(notifications);
+    } catch (err) {
+        console.error('Error: ', err);
+    }
+}
+
 sendNotification();
+getNotifications();
