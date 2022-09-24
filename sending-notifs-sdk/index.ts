@@ -36,4 +36,14 @@ const sendNotification = async () => {
     }
 }
 
+const getNotifications = async () => {
+    try {
+        const notifications = await EpnsAPI.user.getFeeds({ user: recipientAddress, env: 'staging', limit: 1, page: 1 });
+        console.log(notifications);
+    } catch (err) {
+        console.error('Error: ', err);
+    }
+}
+
 sendNotification();
+getNotifications();
