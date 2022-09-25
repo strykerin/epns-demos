@@ -16,13 +16,13 @@ const sendNotification = async () => {
             type: 3, // target
             identityType: 2, // direct payload
             notification: {
-                title: 'Hi',
-                body: 'Hi'
+                title: 'Hello world!',
+                body: 'Hi everyone!'
             },
             payload: {
-                title: 'Hi',
-                body: 'Hi',
-                cta: 'https://youtube.com',
+                title: 'New Notification',
+                body: 'New video!',
+                cta: 'https://www.youtube.com/watch?v=j6FQuk_qikw',
                 img: ''
             },
             recipients: recipientAddress,
